@@ -1,0 +1,32 @@
+{
+    "workbench.colorTheme": "Gnome Dark (Atom One)",
+    "workbench.colorCustomizations": {
+        "editorCursor.background": "#000000",
+        "editorCursor.foreground": "#ffffff"
+    },
+
+    "gopls": {
+        "experimentalWorkspaceModule": true,
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "gitlens.hovers.currentLine.over": "line",
+    "git.confirmSync": false,
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "code-runner.runInTerminal": true,
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path.linux": "/home/lucasraoni/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
+    },
+    "redhat.telemetry.enabled": true,
+    "editor.cursorStyle": "block",
+
+    "editor.fontFamily": "Hack Nerd Font", 
+    "editor.fontLigatures": true,
+
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
+    "terminal.integrated.letterSpacing": 1,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "arduino.useArduinoCli": true,
+}

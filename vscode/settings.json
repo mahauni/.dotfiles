@@ -14,9 +14,6 @@
     "git.confirmSync": false,
     "editor.autoClosingBrackets": "never",
     "code-runner.runInTerminal": true,
-    "vs-kubernetes": {
-        "vscode-kubernetes.helm-path.linux": "/home/lucasraoni/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
-    },
     "redhat.telemetry.enabled": true,
     "editor.cursorStyle": "block",
 

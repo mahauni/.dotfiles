@@ -12,7 +12,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "gitlens.hovers.currentLine.over": "line",
     "git.confirmSync": false,
-    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.autoClosingBrackets": "never",
     "code-runner.runInTerminal": true,
     "vs-kubernetes": {
         "vscode-kubernetes.helm-path.linux": "/home/lucasraoni/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
@@ -29,4 +29,26 @@
         "editor.formatOnType": true
     },
     "arduino.useArduinoCli": true,
+    "editor.autoClosingQuotes": "never",
+    "yaml.schemas": {
+        "Kubernetes": "globPattern"
+    },
+    "window.zoomLevel": 1,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "editor.minimap.enabled": false,
+    "workbench.editor.showTabs": false,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 1,
+    "files.autoSave": "onWindowChange",
+    "window.commandCenter": true,
+    "window.menuBarVisibility": "compact",
+    "workbench.layoutControl.enabled": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "workbench.activityBar.visible": false,
+    "editor.lineNumbers": "relative",
 }

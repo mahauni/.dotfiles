@@ -53,3 +53,5 @@ Well if you want to use the script you can do with these commands
 chmod +x $HOME/install-dotfiles.sh
 $HOME/install-dotfiles.sh
 ```
+
+If you want to read more about this check the post on Hacker News: https://news.ycombinator.com/item?id=11070797

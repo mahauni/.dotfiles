@@ -37,7 +37,18 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec wezterm'
+# Other why to exec things in the i3
+# exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec wezterm'
+
+# Assign applications to workspaces
+assign [class="firefox"] 2
+assign [class="KeePassXC"] 9
+assign [class="org.wezterm.wezterm"] 1
+
+# Then simply launch them
+exec --no-startup-id firefox
+exec --no-startup-id flatpak run org.keepassxc.KeePassXC
+exec --no-startup-id wezterm
 
 exec feh --bg-scale ~/.config/wallpaper/acheron.png
 
@@ -217,3 +228,16 @@ bar {
     binding_mode       #1f222d #81a1c1    #2e3440
   }
 }
+
+# ----------------------------------------------------------------------------------------------------------------
+# Add this to your i3 config to take a screenshot (selection) and save it to the clipboard just by pressing PrtSc!
+# The resulting file will have this format: screenshot_02-Dec-2021_13-24-21.png
+#
+# NOTE: This assumes you have a directory ~/screenshots and you have installed:
+#   - maim
+#   - xclip
+# ----------------------------------------------------------------------------------------------------------------
+
+# screenshot (saves to clipboard and a file in ~/screenshots)
+# key: PrtSc
+bindsym Print exec NOW=$(date +%d-%b-%Y_%H-%M-%S) && maim --format png --select > ~/screenshots/screenshot_$NOW.png && xclip -selection clip -t image/png ~/screenshots/screenshot_$NOW.png

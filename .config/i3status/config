@@ -21,39 +21,35 @@ order += "wireless _first_"
 # order += "battery all"
 order += "battery 0"
 order += "disk /"
-order += "load"
+order += "cpu_usage"
+order += "cpu_temperature 0"
 order += "memory"
 order += "tztime local"
 
-# wireless _first_ {
-#         format_up = "(%quality at %essid)"
-#         format_down = "down"
-# }
-
-wireless _first_ {
-        format_up = "  %essid  "
-        format_down = "  Down  "
-}
-
 volume master {
-        format = "  %volume  "
-        format_muted = "  %volume  "
+        format = "  %volume"
+        format_muted = "  %volume"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
-ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+wireless _first_ {
+        format_up = "|   %essid"
+        format_down = "|   Down"
 }
+
+# ethernet _first_ {
+#         format_up = "E: %ip (%speed)"
+#         format_down = "E: down"
+# }
 
 # battery all {
 #         format = "%status %percentage"
 # }
 
 battery 0 {
-        format = "%status %percentage"
+        format = "| %status %percentage"
         hide_seconds = true
         integer_battery_capacity = true
         last_full_capacity = true
@@ -63,20 +59,24 @@ battery 0 {
 }
 
 disk "/" {
-        format = "%avail"
+        format = "| %avail (%percentage_avail)"
 }
 
-load {
-        format = "CPU: %1min"
+cpu_usage {
+        format = "| CPU: %usage"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
 }
 
 memory {
-        format = "  Mem %used"
+        format = "| Mem %percentage_used"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = "   %a %d-%m-%Y    %H:%M  "
+        format = "|   %a %d-%m-%Y    %H:%M  "
 }
 

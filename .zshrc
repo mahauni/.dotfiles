@@ -128,3 +128,34 @@ complete -C '/usr/local/bin/aws_completer' aws
 alias config='/usr/bin/git --git-dir=/home/mahauni/.dotfiles/ --work-tree=/home/mahauni'
 
 . "$HOME/.cargo/env"
+
+# export ANDROID_HOME="/mnt/c/Users/FINPEC_NB050/AppData/Local/Android/sdk"
+# export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/cmdline-tools/latest/bin"
+
+# pnpm
+# export PNPM_HOME="/home/mahauni/.local/share/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+# pnpm end
+
+# --- Fix Docker cursor bug (docker compose) ---
+# docker() {
+#   command docker "$@"
+#   tput cnorm
+# }
+
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+# opencode
+export PATH=/home/mahauni/.opencode/bin:$PATH
+
+# zoxide
+eval "$(zoxide init zsh)"
+

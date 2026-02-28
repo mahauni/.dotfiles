@@ -112,12 +112,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Go binaries
 export PATH=$PATH:/usr/local/go/bin
-# export GOPATH=/usr/local/go
-# export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/go/bin
 
 export PATH=$PATH:/usr/local/zig
-export PATH=$PATH:$HOME/go/bin
 export PATH=/home/mahauni/bin:$PATH
 export PATH=/usr/local/dart-sass:$PATH
 export PATH=$HOME/.local/bin:$PATH

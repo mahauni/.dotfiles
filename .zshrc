@@ -64,6 +64,10 @@ path=(~/bin $path)
 # Export environment variables.
 export GPG_TTY=$TTY
 
+# z4h skips /etc/profile.d (no_global_rcs), so set XDG_DATA_DIRS ourselves.
+# Without /usr/share here, GTK apps abort (no icons/MIME database).
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
+
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
 

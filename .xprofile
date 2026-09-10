@@ -1,0 +1,4 @@
+# Sourced by LightDM before starting the X session (i3).
+# environment.d only applies to systemd user services, so set this here too;
+# without /usr/share in XDG_DATA_DIRS, GTK apps abort (no icons/MIME database).
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"

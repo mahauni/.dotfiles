@@ -10,6 +10,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 ```bash
 git clone --bare https://github.com/mahauni/.dotfiles.git $HOME/.dotfiles
+or
+git clone --bare git@github.com:mahauni/.dotfiles.git $HOME/.dotfiles
 ```
 
 3. Checkout to the content of the repo

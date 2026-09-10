@@ -29,6 +29,13 @@ end
 -- Configs
 config.enable_tab_bar = false
 config.default_prog = Default_prog
+config.keys = {
+	{
+		key = "Backspace",
+		mods = "CTRL",
+		action = wezterm.action.SendString("\x1b\x7f"),
+	},
+}
 
 -- Colorscheme
 config.color_scheme = "Tokyo Night"

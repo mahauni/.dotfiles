@@ -1,0 +1,11 @@
+node_modules/
+
+# Sessões salvas: contêm token de sessão real. Nunca versionar.
+*/.auth.json
+
+# Saída de foto e alvos avulsos por URL.
+*/shots/
+_urls/
+
+# Originais da estrutura antiga, substituídos na v2.
+_old/

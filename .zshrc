@@ -120,8 +120,10 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 
+# Zig binaries
 export PATH=$PATH:/usr/local/zig
-export PATH=/home/mahauni/bin:$PATH
+
+export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/dart-sass:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
@@ -138,8 +140,8 @@ alias config='/usr/bin/git --git-dir=/home/mahauni/.dotfiles/ --work-tree=/home/
 # pnpm
 # export PNPM_HOME="/home/mahauni/.local/share/pnpm"
 # case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
+#   *":$PNPM_HOME/bin:"*) ;;
+#   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 # esac
 # pnpm end
 
@@ -148,6 +150,8 @@ alias config='/usr/bin/git --git-dir=/home/mahauni/.dotfiles/ --work-tree=/home/
 #   command docker "$@"
 #   tput cnorm
 # }
+
+export PATH=$HOME/.local/bin:$PATH
 
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
@@ -162,3 +166,43 @@ export PATH=/home/mahauni/.opencode/bin:$PATH
 # zoxide
 eval "$(zoxide init zsh)"
 
+# mhome() {
+#   mosh home -- tmux attach -t remote 2>/dev/null || tmux new -s remote
+# }
+#
+# enter_directory() {
+#   if [[ $PWD == $PREV_PWD ]]; then
+#     return
+#   fi
+#
+#   PREV_PWD=$PWD
+#   if [[ -f ".nvmrc" ]]; then
+#     nvm use > /dev/null 2>&1
+#     NVM_DIRTY=true
+#   elif [[ $NVM_DIRTY = true ]]; then
+#     nvm use default > /dev/null 2>&1
+#     NVM_DIRTY=false
+#   fi
+# }
+#
+# autoload -U add-zsh-hook
+# add-zsh-hook chpwd enter_directory
+# export AZURE_DEVOPS_EXT_PAT=$(tr -d "
+# " < ~/.finpec/finpec-pat)
+#
+#
+# codex() {
+#   agent-notify set work --agent codex
+#   command codex "$@"
+#   local result=$?
+#   agent-notify clear
+#   return $result
+# }
+#
+# claude() {
+#   agent-notify set work --agent claude
+#   command claude "$@"
+#   local result=$?
+#   agent-notify clear
+#   return $result
+# }

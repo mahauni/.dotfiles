@@ -1,0 +1,10 @@
+{
+  "name": "playwright-mcp",
+  "version": "2.0.0",
+  "description": "Playwright avulso, fora dos projetos: fotografa telas e roda checks e2e de qualquer front local ou remoto",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}

@@ -44,12 +44,12 @@ exec --no-startup-id nm-applet
 
 # Assign applications to workspaces
 assign [class="firefox"] 2
-assign [class="KeePassXC"] 9
+# assign [class="KeePassXC"] 9
 assign [class="org.wezterm.wezterm"] 1
 
 # Then simply launch them
 exec --no-startup-id firefox
-exec --no-startup-id flatpak run org.keepassxc.KeePassXC
+# exec --no-startup-id flatpak run org.keepassxc.KeePassXC
 exec --no-startup-id wezterm
 
 exec feh --bg-scale ~/.config/wallpaper/acheron.png

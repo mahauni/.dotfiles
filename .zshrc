@@ -138,18 +138,18 @@ alias config='/usr/bin/git --git-dir=/home/mahauni/.dotfiles/ --work-tree=/home/
 # export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/cmdline-tools/latest/bin"
 
 # pnpm
-export PNPM_HOME="/home/mahauni/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
+# export PNPM_HOME="/home/mahauni/.local/share/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME/bin:"*) ;;
+#   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+# esac
 # pnpm end
 
 # --- Fix Docker cursor bug (docker compose) ---
-docker() {
-  command docker "$@"
-  tput cnorm
-}
+# docker() {
+#   command docker "$@"
+#   tput cnorm
+# }
 
 export PATH=$HOME/.local/bin:$PATH
 
@@ -166,43 +166,43 @@ export PATH=/home/mahauni/.opencode/bin:$PATH
 # zoxide
 eval "$(zoxide init zsh)"
 
-mhome() {
-  mosh home -- tmux attach -t remote 2>/dev/null || tmux new -s remote
-}
-
-enter_directory() {
-  if [[ $PWD == $PREV_PWD ]]; then
-    return
-  fi
-
-  PREV_PWD=$PWD
-  if [[ -f ".nvmrc" ]]; then
-    nvm use > /dev/null 2>&1
-    NVM_DIRTY=true
-  elif [[ $NVM_DIRTY = true ]]; then
-    nvm use default > /dev/null 2>&1
-    NVM_DIRTY=false
-  fi
-}
-
-autoload -U add-zsh-hook
-add-zsh-hook chpwd enter_directory
-export AZURE_DEVOPS_EXT_PAT=$(tr -d "
-" < ~/.finpec/finpec-pat)
-
-
-codex() {
-  agent-notify set work --agent codex
-  command codex "$@"
-  local result=$?
-  agent-notify clear
-  return $result
-}
-
-claude() {
-  agent-notify set work --agent claude
-  command claude "$@"
-  local result=$?
-  agent-notify clear
-  return $result
-}
+# mhome() {
+#   mosh home -- tmux attach -t remote 2>/dev/null || tmux new -s remote
+# }
+#
+# enter_directory() {
+#   if [[ $PWD == $PREV_PWD ]]; then
+#     return
+#   fi
+#
+#   PREV_PWD=$PWD
+#   if [[ -f ".nvmrc" ]]; then
+#     nvm use > /dev/null 2>&1
+#     NVM_DIRTY=true
+#   elif [[ $NVM_DIRTY = true ]]; then
+#     nvm use default > /dev/null 2>&1
+#     NVM_DIRTY=false
+#   fi
+# }
+#
+# autoload -U add-zsh-hook
+# add-zsh-hook chpwd enter_directory
+# export AZURE_DEVOPS_EXT_PAT=$(tr -d "
+# " < ~/.finpec/finpec-pat)
+#
+#
+# codex() {
+#   agent-notify set work --agent codex
+#   command codex "$@"
+#   local result=$?
+#   agent-notify clear
+#   return $result
+# }
+#
+# claude() {
+#   agent-notify set work --agent claude
+#   command claude "$@"
+#   local result=$?
+#   agent-notify clear
+#   return $result
+# }

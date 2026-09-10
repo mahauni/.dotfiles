@@ -64,6 +64,10 @@ path=(~/bin $path)
 # Export environment variables.
 export GPG_TTY=$TTY
 
+# z4h skips /etc/profile.d (no_global_rcs), so set XDG_DATA_DIRS ourselves.
+# Without /usr/share here, GTK apps abort (no icons/MIME database).
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
+
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
 
@@ -112,13 +116,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Go binaries
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=/home/mahauni/go
-# export PATH=$PATH:$GOPATH/bin
-
 export PATH=$PATH:$HOME/go/bin
+
+# Zig binaries
 export PATH=$PATH:/usr/local/zig
-export PATH=/home/mahauni/bin:$PATH
+
+export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/dart-sass:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
